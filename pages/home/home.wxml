@@ -1,4 +1,29 @@
 <!--pages/home/home.wxml-->
 <text class="title">hello world</text>
-<button size="mini">按钮</button>
+<button size="mini" open-type="contact">客服会话</button>
+<button size="mini" open-type="share">用户转发</button>
+<button size="mini" open-type="getPhoneNumber">用户手机</button>
+<button size="mini" 
+        open-type="getUserInfo"
+        bindgetuserinfo="handleUserInfo"
+        bindtap="handleUserInfo">
+  获取授权
+</button>
+<button size="mini" open-type="launchApp">打开APP</button>
+<button size="mini" open-type="openSetting">授权设置</button>
+<button size="mini" open-type="feedback">意见反馈</button>
 
+<open-data></open-data>
+<open-data type="groupName" open-gid="xxxxxx">拉取群名称</open-data>
+<open-data type="userNickName" lang="zh_CN">用户昵称</open-data>
+<open-data type="userAvatarUrl" lang="zh_CN">用户头像</open-data>
+<open-data type="userGender" lang="zh_CN">用户性别</open-data>
+<open-data type="userCity" lang="zh_CN">用户所在地</open-data>
+<open-data type="userProvince" lang="zh_CN">用户所在省份</open-data>
+<open-data type="userCountry" lang="zh_CN">用户所在国家</open-data>
+<open-data type="userLanguage" lang="zh_CN">用户的语言</open-data>
+
+<view bindtap="handleViewClick">{{message}}</view>
+<view wx:for="{{list}}"  wx:for-index="id" wx:key="id">{{item.title}}</view>
+<view wx:for="{{list}}" wx:for-item="items" wx:for-index="id" wx:key="index">{{items.author_name}}</view>
+<!-- 遍历对象方法：<view wx:for="{{list.author_names}}" wx:for-item="names" wx:for-index="id" wx:key="index">{{names.author_name}}</view> -->

@@ -1,0 +1,54 @@
+{
+  "description": "项目配置文件",
+  //packOptions，数据类型Object，打包配置选项
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": { //项目设置
+    "urlCheck": true, //urlCheck，Boolean，是否检查安全域名和TLS版本
+    "es6": true, //es6，Boolean，是否启用 es6 转 es5
+    "postcss": true, //postcss，Boolean，上传代码时样式是否自动补全
+    "minified": true, //minified，Boolean，上传代码时是否自动压缩
+   " uglifyFileName":	true, //Boolean	是否进行代码保护
+    "newFeature": true, //支持新功能
+    "autoAudits": false, //自动审核
+    "coverView": true, //coverView 是否使用工具渲染CoverView
+    "enhance": false, //Boolean	是否打开增强编译
+    "babelSetting": { //增强编译下Babel的配置项
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "checkInvalidKey": true,
+    "checkSiteMap": false, //索引提示
+    "uploadWithSourceMap": true, //上传时是否带上sourcemap(默认true)
+  },
+  "compileType": "miniprogram", //编译类型，miniprogram为普通小程序项目，plugin为小程序插件项目
+  "libVersion": "2.7.2", //基础库版本
+  "appid": "wxb464782172dc5b0a", //项目的appid，只在新建项目时读取
+  "projectname": "test-project", //项目名字，只在新建项目时读取
+  "debugOptions": { //用于配置在对项目进行调试时的选项
+    "hidedInDevtools": [] //用于配置调试时于调试器Sources面板源代码的文件
+  },
+  "isGameTourist": false, //微信小游戏
+  "simulatorType": "wechat", //模拟器类型
+  "simulatorPluginLibVersion": {}, //模拟器插件库版本
+  "condition": { //编译模式，增加编译模式时，会添加到下面的对应数组
+    "search": { //搜索
+      "current": -1,
+      "list": []
+    },
+    "conversation": { //会话
+      "current": -1,
+      "list": []
+    },
+    "game": { //小游戏
+      "currentL": -1,
+      "list": []
+    },
+    "miniprogram": { //小程序
+      "current": -1,
+      "list": []
+    }
+  }
+}
