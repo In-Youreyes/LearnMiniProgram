@@ -1,0 +1,23 @@
+<!--pages/text/text.wxml-->
+<text>text componemt</text>
+<text>文本</text>
+<view></view>
+
+<!-- 1.selectable文字选中 -->
+<text>Hello World\n</text>
+<text selectable="{{true}}">Hello World\n</text>
+<text selectable>Hello World\n</text>
+
+<!-- 2.空格 -->
+<text space="nbsp">Hello World\n</text>
+<text space="emsp">Hello World\n</text>
+<text space="ensp">Hello World\n</text>
+
+<!-- 3.特殊字符 -->
+<text>&lt;Hello World&gt;\n</text>
+<text decode="{{true}}">&lt;Hello World&gt;\n</text>
+<text decode="true">&lt;Hello World&gt;\n</text>
+<text decode="false">&lt;Hello World&gt;\n</text>
+<text decode="{{false}}">&lt;Hello World&gt;\n</text>
+<text decode="">&lt;Hello World&gt;\n</text>
+<text decode>&lt;Hello World&gt;\n</text>

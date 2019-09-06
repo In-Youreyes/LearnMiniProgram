@@ -1,0 +1,27 @@
+/* pages/scrollView/scrollView.wxss */
+/* scroll-x */
+.container1 {
+  background-color: purple;
+  margin-bottom: 10px;
+  white-space: nowrap;
+}
+.item1 {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  margin: 10px;
+  display: inline-block;
+}
+
+/* scroll-y */
+.container2 {
+  height: 200px;
+  background-color: blue;
+  margin-bottom: 10px;
+  white-space: nowrap;
+}
+.item2 {
+  height: 100px;
+  background-color: green;
+  margin: 10px;
+}

@@ -1,6 +1,42 @@
 {
   "pages": [
+    "pages/scrollView/scrollView",
+    "pages/input/input",
+    "pages/image/image",
+    "pages/view/view",
+    "pages/button/button",
+    "pages/text/text",
     "pages/home/home",
     "pages/about/about"
-  ]
+  ],
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/scrollView/scrollView",
+        "text": "scroll-view",
+        "iconPath": "assets/tabbar/icon_chat.png"
+      },
+      {
+        "pagePath": "pages/input/input",
+        "text": "input",
+        "iconPath": "assets/tabbar/icon_chat.png"
+      },
+      {
+        "pagePath": "pages/image/image",
+        "text": "image",
+        "iconPath": "assets/tabbar/icon_chat.png"
+      },
+      {
+        "pagePath": "pages/view/view",
+        "text": "view",
+        "iconPath": "assets/tabbar/icon_chat.png"
+      },
+      {
+        "pagePath": "pages/button/button",
+        "text": "button",
+        "iconPath": "assets/tabbar/icon_chat.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
 }

@@ -1,0 +1,5 @@
+/* pages/button/button.wxss */
+.css-pressed{
+  color: rgb(238, 225, 43);
+  background: red;
+}

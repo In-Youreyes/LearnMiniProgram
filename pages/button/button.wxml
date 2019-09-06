@@ -1,0 +1,36 @@
+<!--pages/button/button.wxml-->
+<button>按钮</button>
+
+<!-- 1.size大小 default、mini -->
+<view>size大小，设为mini变成行内块级元素</view>
+<button size="default">按钮</button>
+<button size="mini">按钮</button>
+<button size="mini">按钮</button>
+
+<!-- 2.type类型 -->
+<view>type类型</view>
+<button size="mini" type="primary">按钮</button>
+<button size="mini" type="default">按钮</button>
+<button size="mini" type="warn">按钮</button>
+
+<!-- 3.plain镂空效果 -->
+<view>plain镂空效果</view>
+<button size="mini" plain="{{true}}">按钮</button>
+<button size="mini" plain>按钮</button>
+
+<!-- 4.disabled不可用 -->
+<view>disabled按钮不可用</view>
+<button size="mini" disabled="{{true}}">按钮</button>
+<button size="mini" disabled>按钮</button>
+
+<!-- 5.loading图标 -->
+<view>loading图标，通过变量改变图标显示</view>
+<button size="mini" loading="{{isLoading}}">按钮</button>
+<button size="mini" loading>按钮</button>
+
+<!-- 6.hover-class点击背景 -->
+<view>hover-class点击按钮时的背景,由wxss中的类控制</view>
+<button size="mini" hover-class="none">按钮</button>
+<button size="mini" hover-class="css-pressed">按钮</button>
+
+<view hidden='true'>hidden</view>

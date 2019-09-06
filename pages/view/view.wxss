@@ -1,0 +1,35 @@
+/* pages/view/view.wxss */
+
+.view-title{
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: bolder;
+}
+.box {
+  background-color: red;
+}
+
+.box1 {
+  width: 100px;
+  height: 100px;
+  background-color: purple;
+  margin-top: 10px;
+}
+
+.hover-view {
+  background-color: orange;
+  font-size: 30px;
+}
+
+.box2 {
+  width: 200px;
+  height: 120xp;
+  background-color: green;
+  margin-top: 10px;
+}
+
+.box2-hover {
+  background-color: red;
+}
