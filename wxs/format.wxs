@@ -1,0 +1,62 @@
+//价格格式化
+function priceFormat (price, fixed) {
+  var fixed = fixed || 2; //默认值为2
+  var price = parseFloat(price);
+  return price.toFixed(fixed)
+}
+
+//时间格式化
+function dateFormat (timestamp, format) {
+  //默认格式
+  if (!format) {
+    format = "yyyy-MM-dd hh:mm:ss";
+  }
+  timestamp = parseInt(timestamp);
+  // 通过getDate()方法获取date类型的时间
+  // Sat Sep 07 2019 11: 07: 41 GMT + 0800(中国标准时间)
+  var realDate = getDate(timestamp);
+  
+  //十位补0
+  function timeFormat (num) {
+    return num < 10 ? '0' + num : num;
+  }
+
+  //月、日、时、分、季、秒
+  var date = [
+    ["M+", timeFormat(realDate.getMonth() + 1)],
+    ["d+", timeFormat(realDate.getDate())],
+    ["h+", timeFormat(realDate.getHours())],
+    ["m+", timeFormat(realDate.getMinutes())],
+    ["s+", timeFormat(realDate.getSeconds())],
+    ["q+", Math.floor((realDate.getMonth() + 3) /3)],
+    ["S+", realDate.getMilliseconds()]
+  ];
+
+  var regYear = getRegExp("(y+)", "i"),//年份y+的正则
+      reg1 = regYear.exec(format); //匹配的年份占位符(y...)
+  
+  //reg1[1]的yyyy  替换为 ‘字符串年份’ 
+  if (reg1) {
+    format = format.replace(reg1[1], (realDate.getFullYear() + '').substring(4 - reg1[1].length));//根据y的个数截取年份数字个数
+  }
+
+  //k：格式对象， v：格式函数
+  for (var i = 0; i < date.length; i++) {
+    var k = date[i][0];
+    var v = date[i][1];
+    // getRegExp初始化一个正则表达式对象
+    var reg2 = getRegExp("(" + k + ")").exec(format);
+    if (reg2) {
+      // (hh) 直接替换
+      // (h) 补0替换，最多2个0
+      format = format.replace(reg2[1], reg2[1].length == 1
+        ? v : ("00" + v).substring(("" + v).length));
+    }
+  }
+  return format;
+}
+
+module.exports = {
+  priceFormat: priceFormat,
+  dateFormat: dateFormat
+}

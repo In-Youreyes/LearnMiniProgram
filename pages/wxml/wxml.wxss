@@ -1,0 +1,12 @@
+/* pages/wxml/wxml.wxss */
+.br {
+  margin: 20px 0;
+}
+.box {
+  height: 30px;
+  background-color: blue;
+}
+.active {
+  color: red;
+  background-color: yellowgreen;
+}

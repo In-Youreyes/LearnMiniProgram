@@ -1,0 +1,47 @@
+<!--pages/wxss/wxss.wxml-->
+
+<!-- 1.设置样式的三种方式 -->
+<view style="background: red; font-size:30px;"> 内联样式</view>
+<view class="box">页面样式</view>
+<view class="container">全局样式</view>
+
+<!-- 2.wxss中的rpx单位 -->
+<!-- 前端也需要进行配置尺寸的适配：em、rem、vw/wh -->
+<!-- rpx会自适应的适配，px固定尺寸 -->
+<view class="box1"></view>
+<view class="box1-rpx"></view>
+
+<view class="container1">哈哈哈</view>
+<view class="container1-rpx">嘿嘿嘿</view>
+
+<!-- 3.wxss的样式导入 -->
+<!-- 3.1wxss样式非常多的时候抽取到单独文件
+     3.2.多个不同地方公共样式单独导入到全局样式中 -->
+<button>按钮</button>
+<button class=".btn">按钮</button>
+
+<!-- 4.使用官方样式库开发一个搜索框 -->
+<!-- 打开example,找到searchbar
+     打开wxml文件,找到对应搜索框weui-search-bar 
+     将组件整个复制下来到
+     引入样式: (1)引入style样式,可以引入全局样式weui.wxss(效率低)
+              (2)引入单独样式(推荐)
+     找到样式库文件对应文件夹,复制粘贴到项目中,或者复制代码新建wxss文件粘贴
+     @import导入样式
+     将js文件中的绑定事件绑定函数等复制到当前js文件中 -->
+<view class="weui-search-bar">
+  <view class="weui-search-bar__form">
+    <view class="weui-search-bar__box">
+      <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+      <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+      <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+        <icon type="clear" size="14"></icon>
+      </view>
+    </view>
+    <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+      <icon class="weui-icon-search" type="search" size="14"></icon>
+      <view class="weui-search-bar__text">搜索</view>
+    </label>
+  </view>
+  <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+</view>

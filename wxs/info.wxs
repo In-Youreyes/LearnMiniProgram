@@ -1,0 +1,13 @@
+//JS代码,不能使用ES6语法
+var message = "Hello World";
+var name = "chen";
+
+var sum = function(num1, num2) {
+  return num1 + num2;
+}
+//commonjs模块化导出的写法
+module.exports = {
+  message: message,
+  name: name,
+  sum: sum
+}

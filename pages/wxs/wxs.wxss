@@ -1,0 +1,4 @@
+/* pages/wxs/wxs.wxss */
+.br {
+  margin: 20px 0;
+}

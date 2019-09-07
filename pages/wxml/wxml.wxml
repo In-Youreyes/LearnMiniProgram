@@ -1,0 +1,114 @@
+<!--pages/wxml/wxml.wxml-->
+<view>WXML语法</view>
+<!-- <view></view>
+     <image/>
+     <input/>
+     <view class="" Class="">22</view> -->
+
+<!-- mustache -->
+<view class="" Class="">{{message}}</view>
+<view>{{firstName}} {{lastName}}</view>
+<view>{{firstName + ' ' + lastName}}</view>
+<view>{{age>=18 ? 'Adult' : 'Child'}}</view>
+<view class="br"></view>
+
+<view>时间: {{time}}</view>
+<view>Date()当天日期: {{nowTime}}</view>
+<view>toString当天日期: {{nowTime1}}</view>
+<view>toDateString日期部分: {{nowTime2}}</view>
+<view>toLocaleString日期对象: {{nowTime3}}</view>
+<view>toLocaleDateString日期部分: {{nowTime4}}</view>
+<view>getDate日期: {{nowTime5}}</view>
+<view>getDay星期: {{nowTime6}}</view>
+<view>getTime毫秒: {{nowTime7}}</view>
+<view class="br"></view>
+<button size="mini" bindtap="handleSwitchColor">切换颜色</button>
+<view class="box {{isActive ? 'active' : ''}}">颜色改变</view>
+<view class="br"></view>
+
+<view>----------条件判断-------------</view>
+<!-- wx:if使用 -->
+<button size="mini" bindtap="handleSwitchShow">按钮</button>
+<view wx:if="{{false}}">哈哈哈</view>
+<view wx:if="false">哈哈哈</view>
+<view wx:if="{{isShow}}">哈哈哈</view>
+
+<!-- wx:elif/wx:else -->
+<button size="mini" bindtap="handleIncrement">加分</button>
+<view wx:if="{{score >= 90}}">优秀</view>
+<view wx:elif="{{score >= 80}}">良好</view>
+<view wx:elif="{{score >= 60}}">及格</view>
+<view wx:else="{{score < 60}}">不及格</view>
+
+<!-- hidden属性 -->
+<view hidden>hidden内容</view>
+<view class="br"></view>
+
+<!-- wx:if和hidden隐藏组件区别 -->
+<!-- hidden隐藏的组件依然存在display:none(切换频率高时使用)
+      wx:if隐藏的组件根本不在 -->
+<view hidden="{{true}}">hidden内容</view>
+<view wx:if="{{false}}">wx:if内容</view>
+<view class="br"></view>
+
+<!-- <view>-------------列表渲染----------------</view>
+<view wx:for="{{ ['a', 'b', 'c', 'd'] }}" wx:key="index">{{item}} {{index}}</view>
+<view wx:for="zifuchuan">{{item}} {{index}}</view>
+<view wx:for="{{9}}">{{item}} {{index}}</view>
+<view class="br"></view> -->
+
+<view>-------------block标签--------------</view>
+<block wx:if="{{isShow}}" wx:key="index">
+  <button>按钮</button>
+  <view>嘿嘿嘿</view>
+  <text>内容</text>
+</block>
+<view class="br"></view>
+
+<block wx:for="{{3}}" class="box" wx:key="id">
+  <button>按钮</button>
+  <view>呵呵呵</view>
+  <text>内容</text>
+</block>
+<view class="br"></view>
+
+<!-- item、index起别名 -->
+<view wx:for="{{movies}}" 
+      wx:for-item="movie"
+      wx:for-index="id" wx:key="id">{{movie}} {{id}}</view>
+<view class="br"></view>
+
+<!-- 多层遍历 -->
+<block wx:for="{{numbers}}"
+       wx:for-item="inner_numbers"
+       wx:for-index="num_id" 
+       wx:key="{{num_id}}">
+  <block wx:for="{{inner_numbers}}" wx:key="{{index}}">
+    <view>{{item}}</view>
+  </block>
+</block>
+<view class="br"></view>
+
+<!-- key的作用,如果用index仅仅是消除警告 -->
+<!-- <view wx:for="{{letters}}" wx:key="{{index}}">{{item}} {{index}}</view> -->
+<view class="br"></view>
+
+
+<view>------------template---------------</view>
+<!-- template模板 -->
+<!-- 模板钟包裹的内容，在没有被使用前，是不会进行任何渲染的
+     使用<template/>(或者双标签) is="name属性值"调用模板-->
+<!-- <template name="contentTpl">
+  <button size="mini">{{btnText}}</button>
+  <view>{{content}}</view>
+</template> -->
+
+<!-- <import src="模板文件的路径">绝对路径/相对路径 -->
+<import src="/wxml/template.wxml"/>
+<!-- <import src="../../wxml/template.wxml"/> -->
+<!-- import主要是导入template，不能逐层导入
+     include不能引入template/wxs，可以逐层引入-->
+<template is="contentTpl" data="{{btnText: '模板按钮', content: '模板容器1'}}"/>
+<template is="contentTpl" data="{{btnText: '模板警告', content: '模板容器2'}}"/>
+<template is="contentTpl" data="{{btnText: '模板点击', content: '模板容器3'}}"/>
+<template is="contentTpl" data="{{btnText: '模板登录', content: '模板容器4'}}"/>

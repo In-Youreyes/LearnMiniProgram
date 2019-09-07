@@ -1,0 +1,48 @@
+<!--pages/wxs/wxs.wxml-->
+<view>WXS语法</view>
+<view class="br"></view>
+
+<view>12.333333</view>
+<view>{{12.333333}}</view>
+<view class="br"></view>
+
+<!-- 1.错误的写法 -->
+<!-- <view>{{12.333333}}</view>
+     <view>{{12.333333.toFixed(2)}}</view>
+-->
+
+<!-- 2,wxs定义方式 -->
+<!-- 2.1直接在wxml中定义方式 -->
+<!-- <wxs module="info">
+  //JS代码,不能使用ES6
+  var message = "Hello World";
+  var name = "chen";
+
+  var sum = function (num1, num2) {
+    return num1 + num2;
+  }
+  //commonjs模块化导出的写法
+  module.exports = {
+    message: message,
+    name: name,
+    sum: sum
+  }
+</wxs> -->
+
+<!-- 2.2定义在单独的wxs文件中，再使用<wxs>标签导入 -->
+<!-- 不能使用绝对路径，只能使用相对路径 -->
+<wxs src="../../wxs/info.wxs" module="info"/>
+
+<view>{{info.message}}</view>
+<view>{{info.name}}</view>
+<view>{{info.sum(10, 20)}}</view>
+<view class="br"></view>
+<!-- 3.wxs应用 -->
+<wxs src="../../wxs/format.wxs" module="format"/>
+<!-- 格式化价格 -->
+<view>{{format.priceFormat(price, 3)}}</view>
+<!-- 格式化日期 -->
+<view>{{format.dateFormat(date, 'yyyy-MM-dd hh:mm:ss')}}</view>
+<view>{{format.dateFormat(date, 'yyyy/MM/dd hh:mm:ss')}}</view>
+<view>{{format.dateFormat(date, 'yyyy-MM-dd')}}</view>
+<view>{{date}}</view>
