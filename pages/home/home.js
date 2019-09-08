@@ -1,66 +1,69 @@
 // pages/home/home.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    titles: ['衣服', '裤子', '鞋子', '帽子']
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  handleClick(event) {
+    console.log(event);
+  },
+  handleTouchStart(event) {
+    console.log('handleTouchStart:开始触摸');
+  },
+  handleTouchNove(event) {
+    console.log('handleTouchNove：触摸后移动');
+  },
+  handleTouchEnd(event) {
+    console.log('handleTouchEnd：触摸结束');
+  },
+  handleTap(event) {
+    console.log('handleTap：触摸立刻离开');
+  },
+  handleLongpress(event) {
+    console.log('handleLongpress：触摸长时间');
+  },
+  handleEvent(event) {
+    console.log('--------------',event);
+  },
+  handleEventEnd(event) {
+    console.log('+++++++++++++++',event);
+  },
+  
+  // 源组件与当前组件的点击事件
+  // handleInner(event) {
+  //   console.log(event.target, event.currentTarget);
+  // },
+  handleOuter(event) {
+    console.log(event.target, event.currentTarget);
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  //点击事件获取内容-dataset
+  handleItemClick(event) {
+    console.log(event);
+    //title - index
+    const dataset = event.currentTarget.dataset;
+    const title = dataset.item;
+    const index = dataset.index;
+    console.log(title, index);
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  //事件冒泡和事件捕获
+  handleCapture1() {
+    console.log("handleCapture1");
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  handleBindView1() {
+    console.log("handleBindView1");
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
+  handleCapture2() {
+    console.log("handleCapture2");
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
+  handleBindView2() {
+    console.log("handleBindView2");
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
+  handleCapture3() {
+    console.log("handleCapture3");
   },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
+  handleBindView3() {
+    console.log("handleBindView3");
+  },
 })
