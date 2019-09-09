@@ -2,5 +2,9 @@
   "pages": [
     "pages/home/home",
     "pages/about/about"
-  ]
+  ],
+  "usingComponents": {
+    "comp": "/components/comp/comp"
+  },
+  "sitemapLocation": "sitemap.json"
 }

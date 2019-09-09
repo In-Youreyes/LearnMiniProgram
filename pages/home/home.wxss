@@ -3,3 +3,22 @@
   color: red;
   font-size: 30px;
 }
+.comp-red{
+  color: red;
+}
+.comp-green{
+  color: green;
+}
+
+.br {
+  margin: 20rpx 0;
+}
+#comp{
+  background-color: green;
+}
+/* text{
+  color: yellowgreen;
+} */
+/* view{
+  color:bisque;
+} */

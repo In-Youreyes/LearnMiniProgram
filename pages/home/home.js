@@ -1,66 +1,35 @@
 // pages/home/home.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    counter: 0,
+    isShow: true
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  handleIncrement(ev) {
+    this.setData({
+      counter: this.data.counter + 1
+    });
+    console.log(ev.detail.name, ev.detail.age, ev);
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  handleTabClick(ev) {
+    console.log(ev, '点击了' + ev.detail.index + ',' + ev.detail.title);
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  handleIncrementComp() {
+    // 修改select组件中的counter
+    const sel_cls = this.selectComponent('.sel-cls');
+    const sel_id = this.selectComponent('#sel-id');
+    //通过setData修改组件中内容
+    // sel_cls.setData({
+    //   counter: sel_cls.data.counter + 20
+    // });
+    // sel_id.setData({
+    //   counter: sel_id.data.counter + 20
+    // });
+    //通过方法对数据进行修改
+    sel_cls.incrementCounter(10);
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  handleChangeShow() {
+    this.setData({
+      isShow: !this.data.isShow
+    })
   }
 })

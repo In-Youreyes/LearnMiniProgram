@@ -1,0 +1,13 @@
+<!--components/tab-control/tab-control.wxml-->
+
+<view class="br">----------自定义事件练习---------------</view>
+<view>tab-coltrol</view>
+<view class="tab-control">
+  <block wx:for="{{titles}}" wx:key="{{index}}">
+    <view class="tab-item {{currentIndex ===index ? 'active' : ''}}"
+          bind:tap="handleItemClick"
+          data-index="{{index}}">
+      <text>{{item}}</text>
+    </view>
+  </block>
+</view>

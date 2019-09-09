@@ -1,0 +1,10 @@
+/* components/comp-detail/comp-detail.wxss */
+
+.title {
+  font-size: 100rpx;
+  flex-wrap: 700;
+}
+
+.content {
+  font-size: 36rpx;
+}

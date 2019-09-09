@@ -1,0 +1,5 @@
+<!--components/comp-detail/comp-detail.wxml-->
+<view class="title">style标题</view>
+<text>组件文本</text>
+<view>组件文本</view>
+<view class="content" id="comp">style内容</view>

@@ -1,0 +1,7 @@
+/* components/comp/comp.wxss */
+
+.title {
+  color: red;
+  font-size: 40rpx;
+  font-weight: 700;
+}

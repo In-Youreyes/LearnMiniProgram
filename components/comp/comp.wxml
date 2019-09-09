@@ -1,0 +1,4 @@
+<!--components/comp/comp.wxml-->
+<view class="title">{{title}}</view>
+<button size="mini">按钮</button>
+<comp1/>

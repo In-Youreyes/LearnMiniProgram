@@ -1,0 +1,4 @@
+/* components/comp1/comp1.wxss */
+.box {
+  background-color: red;
+}

@@ -1,3 +1,11 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "comp-detail": "/components/comp-detail/comp-detail",
+    "props": "/components/props/props",
+    "comp-event": "/components/comp-event/comp-event",
+    "tab-control": "/components/tab-control/tab-control",
+    "select": "/components/select/select",
+    "comp-slot": "/components/comp-slot/comp-slot",
+    "comp-mslot": "/components/comp-mslot/comp-mslot"
+  }
 }

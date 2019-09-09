@@ -1,0 +1,3 @@
+<!--components/comp-event/comp-event.wxml-->
+<view>comp-event自定义组件</view>
+<button size="mini" bind:tap="handleIncrement">+1</button>

@@ -1,4 +1,76 @@
 <!--pages/home/home.wxml-->
-<text class="title">hello world</text>
+<view class="title">标题</view>
+<text>文本</text>
 <button size="mini">按钮</button>
+<view class="br"></view>
+
+<!-- 基本使用 -->
+<view>自定义组件</view>
+<comp></comp>
+<comp/>
+<view class="br"></view>
+
+<!-- 自定义组件样式细节 -->
+<comp-detail id="comp"/>
+<view class="br">-----------------------------</view>
+
+<!-- 组件通信 -->
+<!-- 给自定义组件传递数据和样式 -->
+<props title="哈哈哈" titleclass="comp-red"/>
+<props title="呵呵呵" content="内容呵呵" titleclass="comp-green"/>
+<props title="嘿嘿嘿" content=""/>
+
+<!-- 自定义事件，组件内部发出事件 -->
+<view>当前计数 {{counter}}</view>
+<comp-event bind:increment="handleIncrement"/>
+<button bind:incremet="handleIncrement">按钮自定义事件</button>
+<button bindtap="handleIncrement">按钮普通事件</button>
+
+<!-- tab-control练习 -->
+<tab-control titles="{{['流行','新歌','精选']}}"
+             bind:itemclick="handleTabClick"/>
+<view class="br">----------------------</view>
+
+<!-- 直接选中组件修改数据/调用方法 -->
+<button size="mini" bind:tap="handleIncrementComp">直接修改</button>
+<select class="sel-cls" id="sel-id"/>
+<view class="br">------------------------</view>
+
+<!-- 插槽的使用 -->
+<!-- 单个插槽 -->
+<comp-slot>
+  <button size="mini">插槽按钮</button>
+</comp-slot>
+<comp-slot>
+  <text>插槽文本</text>
+</comp-slot>
+<comp-slot>
+  插槽图片<image src="/assets/images/diaochan.jpg"/>
+</comp-slot>
+<comp-slot>
+  <slider value="60">滑块</slider>
+</comp-slot>
+<view class="br">--------</view>
+
+<!-- 多个插槽 -->
+<!-- 给每一个插槽取一个名字
+     必须在Component中添加选项options multipleslots:true
+ -->
+<!-- <comp-mslot>
+  <button size="mini" slot="slot2">插入的按钮</button>  
+  <slider slot="slot3"/>
+  <text slot="slot1">多个插槽的文本</text>
+</comp-mslot>
+<view class="br">------------------------</view> -->
+
+<!-- 组件中监听生命周期函数 -->
+<button size="mini" bind:tap="handleChangeShow">切换显示</button>
+<block wx:if="{{isShow}}">
+  <comp-mslot>
+    <button size="mini" slot="slot2">插入的按钮</button>  
+    <slider slot="slot3"/>
+    <text slot="slot1">多个插槽的文本</text>
+  </comp-mslot>
+</block>
+
 
