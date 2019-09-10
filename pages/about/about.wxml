@@ -1,2 +1,3 @@
 <!--pages/about/about.wxml-->
 <text>pages/about/about.wxml</text>
+<image src='/assets/images/elizabeth_olsen.jpg'></image>
