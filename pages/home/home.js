@@ -1,66 +1,30 @@
 // pages/home/home.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    title: 'home'
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  handlePushDetail() {
+    // open-type = 'navigate'
+    wx.navigateTo({
+      url: '/pages/detail/detail?title=nihao',
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  handlePushDetail1() {
+    // open-type = 'redirect'
+    wx.redirectTo({
+      url: '/pages/detail/detail',
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  handlePushAbout() {
+    // open-type = 'switchTab'
+    wx.switchTab({
+      url: '/pages/about/about',
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  handlePushDetail2() {
+    // open-type = 'reLaunch'
+    wx.reLaunch({
+      url: '/pages/detail/detail',
+    });
   }
 })

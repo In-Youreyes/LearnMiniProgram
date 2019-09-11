@@ -3,3 +3,6 @@
   color: red;
   font-size: 30px;
 }
+.br{
+  margin: 30rpx 0;
+}

@@ -2,3 +2,44 @@
 <text class="title">hello world</text>
 <button size="mini">按钮</button>
 
+<!-- navigator页面跳转 -->
+<navigator url="/pages/detail/detail">跳到详情页</navigator>
+<!-- navigator属性 open-type -->
+<navigator url="/pages/detail/detail"
+           open-type="redirect">
+  跳到详情页(redirect)
+</navigator>
+
+<navigator url="/pages/about/about"
+           open-type="switchTab">
+  跳到关于页(switchTab)
+</navigator>
+
+<navigator url="/pages/detail/detail"
+           open-type="reLaunch">
+  跳到详情页(reLaunch)
+</navigator>
+<view class="br">----------------------------------</view>
+
+<!-- 跳转过程中数据的传递 -->
+<navigator url="/pages/detail/detail?name=chen&age=18&height=188">传递数据</navigator>
+<view>{{title}}</view>
+<view class="br">----------------------------------</view>
+
+<!-- 通过代码进行页面跳转 -->
+<view>通过代码进行页面跳转</view>
+<button size="mini" 
+        bind:tap="handlePushDetail">跳转详情页
+</button>
+<button size="mini" 
+        bind:tap="handlePushDetail1">跳转详情页(redirect)
+</button>
+<button size="mini" 
+        bind:tap="handlePushAbout">跳转详情页(switchTab)
+</button>
+<button size="mini" 
+        bind:tap="handlePushDetail2">跳转详情页(reLaunch)
+</button>
+<view class="br"></view>
+
+
